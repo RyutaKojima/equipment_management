@@ -3,15 +3,15 @@ return [
     'env' => 'production',
     'db' => [
         // DBのスキーマ名（データベース名）
-        'dbname' => 'management',
+        'dbname' => getenv('DB_DATABASE') ?: 'management',
         // DBのホスト名
-        'host' => 'site_mysql',
+        'host' => getenv('DB_HOST') ?: 'site_mysql',
         // DBサーバの利用ポート
-        'port' => '3306',
+        'port' => getenv('DB_PORT') ?: '3306',
         // DBログインユーザー名
-        'username' => 'adminuser',
+        'username' => getenv('DB_USERNAME') ?: 'adminuser',
         // DBログインパスワード
-        'password' => 'adminuser',
+        'password' => getenv('DB_PASSWORD') ?: 'adminuser',
     ],
     
     'equipments' => [
