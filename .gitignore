@@ -1,0 +1,15 @@
+# for IDE
+.idea/
+
+
+# MySQL Data
+.docker/mysql/
+
+/vendor/
+
+# アプリケーションログ
+app/logs/
+# セッションデータ
+.session/*
+
+public/phpMyAdmin

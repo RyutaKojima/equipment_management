@@ -1,0 +1,2 @@
+DROP SCHEMA IF EXISTS `management`;
+CREATE SCHEMA `management` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;

@@ -1,0 +1,32 @@
+version: '2'
+services:
+    site_web:
+        container_name: site_web
+        build:
+            context: ./
+            dockerfile: Dockerfile
+            args:
+                - FUEL_ENV=develop
+        volumes:
+            - ./:/var/www/site
+        ports:
+            - "9080:80"
+        links:
+            - site_mysql
+    site_mysql:
+        container_name: site_mysql
+        image: mysql:5.5.62
+        restart: always
+        volumes:
+            - ./.docker/mysql/data:/var/lib/mysql
+            - ./.docker/mysql/log:/var/log/mysql
+        environment:
+            MYSQL_DATABASE: management
+            MYSQL_USER: adminuser
+            MYSQL_PASSWORD: adminuser
+            MYSQL_ROOT_PASSWORD: adminuser
+        command: mysqld --innodb-use-native-aio=0 --sql_mode="STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+        ports:
+            - "3306:3306"
+        expose:
+            - "3306"

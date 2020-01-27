@@ -1,0 +1,11 @@
+{
+    "name": "rkojima/equipment_management",
+    "type": "project",
+    "autoload": {
+      "psr-4": {
+        "Controller\\": "app/controllers/",
+        "Model\\": "app/models/"
+      }
+    },
+    "require": {}
+}
