@@ -1,6 +1,12 @@
-# ドキュメントリンク
+# demo
 
-- [BULMA](https://bulma.io/documentation)
+[Demo](https://equipmentmanagement.herokuapp.com/)
+
+| ユーザー | パスワード |
+| -------- | ---------- |
+| guest    | guest      | 
+
+※ 「管理者メニュー」を開く際に必要です
 
 # 環境構築手順
 
